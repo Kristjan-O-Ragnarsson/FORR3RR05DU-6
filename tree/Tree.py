@@ -58,6 +58,9 @@ class Node:
                 return self._left.delet(n)
             else:
                 return self._right.delete(n)
+##
+# til að eyða þarf að finna lægstu nóðuna úr hægra subtréinu
+# #
 
 
 class Tree:
