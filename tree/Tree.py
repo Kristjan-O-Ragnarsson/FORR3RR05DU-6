@@ -10,6 +10,10 @@ class Node:
     def __str__(self):
         return "{0._value}".format(self)
 
+    @property
+    def no_child(self):
+        return True if self._left is None and self._right is None else False
+
     def insert(self, d):
         if self._value == d:
             return False
@@ -41,7 +45,19 @@ class Node:
         sys.stdout.write(str(self) + ' ')
 
     def delete(self, n):
-        pass
+        if self._left == n:
+            if self._left.no_child:
+                self._left = None
+                return True
+        elif self._right == n:
+            if self._right.no_child:
+                self._right = None
+                return True
+        else:
+            if self._value > n:
+                return self._left.delet(n)
+            else:
+                return self._right.delete(n)
 
 
 class Tree:
