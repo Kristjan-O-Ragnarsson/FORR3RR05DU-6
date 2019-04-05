@@ -18,7 +18,6 @@ class Vertex:
         """
         self._name = _n
         self.neighbors = set()
-
     @property
     def name(self):
         return self._name
